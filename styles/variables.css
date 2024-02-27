@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family-origin: 'Inter';
+  --font-family-accent: 'PressStart2P';
+  --font-weight-card: 400;
+  --font-weight-card-title: 700;
+  --background-color: #fff;
+  --background-image:
+    /*repeating-linear-gradient(90deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #000 0 1px, rgb(0 0 0 / 0) 1px 4px),
+    linear-gradient(180deg, #007f0c 10%, #004306 80%);*/
+    repeating-linear-gradient(90deg, var(--gradient-color-1) 0 2px, var(--gradient-color-2) 2px 4px),
+    repeating-linear-gradient(180deg, var(--gradient-color-1) 0 2px, var(--gradient-color-2) 2px 4px),
+    linear-gradient(180deg, var(--gradient-color-3), var(--gradient-color-4));
+  --accent-color: #000;
+  --gradient-color-1: #d3d3d3;
+  --gradient-color-2: transparent;
+  --gradient-color-3: #e7e7e7;
+  --gradient-color-4: #1a1a1a;
+  --shadow-label-color: rgba(255, 255, 255, 0.6);
+
+}
