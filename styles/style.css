@@ -236,6 +236,7 @@
   letter-spacing: 0em;
   border: 2px solid var(--accent-color);
   background-color: var(--background-color);
+  padding-block: 11.5px;
 }
 
 .button:focus {
@@ -245,7 +246,8 @@
 }
 
 .card__button {
-  padding: 12.5px 37px;
+  inline-size: 130px;
+  block-size: 38px;
   display: inline-block;
   position: relative;
 }
@@ -289,13 +291,11 @@
 
 .card__icon-button {
   border: none;
+  outline: none;
   background-color: var(--background-color);
   padding: 0;
-  /*padding-block-start: calc((41.59px - 28px) / 2 - 2px);
-  padding-block-end: calc((41.59px - 28px) / 2 - 2px);
-  padding-inline-start: calc((41.59px - 27px) / 2 - 2px);
-  padding-inline-end: calc((41.59px - 27px) / 2 - 2px);*/
-
+  display: flex;
+  justify-content: center;
 }
 
 .card__icon-button:focus {
@@ -305,17 +305,112 @@
 .card__icon-button:focus-visible {
   outline: none;
 
-  outline: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   animation: button_border 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: none;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--like-icon-contour);
+  transition: fill 0.3s linear;
+}
+
+.main-body {
+  fill: none;
+  transition: fill 0.3s 0.5s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--like-icon-contour);
+  transition: fill 0.3s 0.5s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--like-icon-filling);
+  transition: fill 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--like-icon-filling);
+  transition: fill 0.3s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--like-icon-filling);
+  transition: fill 0.3s 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: is-liked 0.3s 0.1s ease-in 2 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks_opacity-change 0.3s 0.3s ease-in 2 alternate;
+
+}
+
+.dialog {
+  padding: 30px 42px;
+  inline-size: clamp(21.313rem, 3.192vw + 20.564rem, 23.438rem);
+  block-size: 195px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dialog_title {
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  font-weight: var(--font-weight-card);
+  text-transform: uppercase;
+  line-height: calc(21 / 14);
+}
+
+.dialog.opened {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@keyframes sparks_opacity-change {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes is-liked {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
 }
 
 @keyframes button_border {
   from {
-    outline: 2px solid transparent;
+    border: 2px solid transparent;
   }
 
   to {
-    outline: 2px solid var(--accent-color);
+    border: 2px solid var(--accent-color);
   }
 }
 

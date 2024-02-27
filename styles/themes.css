@@ -17,6 +17,8 @@
   --gradient-color-3: #007f0c;
   --gradient-color-4: #004306;
   --shadow-label-color: rgba(0, 0, 0, 0.6);
+  --like-icon-contour: #00cc14;
+  --like-icon-filling: #ff0000;
 }
 
 :root.theme-light {
@@ -34,7 +36,9 @@
   --gradient-color-2: transparent;
   --gradient-color-3: #e7e7e7;
   --gradient-color-4: #1a1a1a;
-  --shadow-label-color: rgba(255, 255, 255, 0.6);;
+  --shadow-label-color: rgba(255, 255, 255, 0.6);
+  --like-icon-contour: #000000;
+  --like-icon-filling: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,5 +54,7 @@
   --gradient-color-3: #007f0c;
   --gradient-color-4: #004306;
   --shadow-label-color: rgba(0, 0, 0, 0.6);
+  --like-icon-contour: #00cc14;
+  --like-icon-filling: #ff0000;
   }
 }

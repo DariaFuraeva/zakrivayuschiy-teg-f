@@ -18,5 +18,6 @@
   --gradient-color-3: #e7e7e7;
   --gradient-color-4: #1a1a1a;
   --shadow-label-color: rgba(255, 255, 255, 0.6);
-
+  --like-icon-contour: #000000;
+  --like-icon-filling: #ff0000;
 }
