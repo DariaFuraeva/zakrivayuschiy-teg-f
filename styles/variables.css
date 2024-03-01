@@ -20,4 +20,6 @@
   --shadow-label-color: rgba(255, 255, 255, 0.6);
   --like-icon-contour: #000000;
   --like-icon-filling: #ff0000;
+  --save-button-size: clamp(1.75rem, -0.657vw + 1.904rem, 1.313rem);
+  --button-hover-color: #fff;
 }
