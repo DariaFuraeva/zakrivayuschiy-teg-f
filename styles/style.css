@@ -103,8 +103,7 @@
   }
 }
 
-.theme-menu__button:disabled
- {
+.theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
 }
@@ -281,19 +280,27 @@
   block-size: 80px;
   inline-size: clamp(19.125rem, 2.723vw + 18.487rem, 20.938rem);
   display: flex;
-  /*flex-direction: column;*/
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 3.5px;
-  /*white-space: nowrap;*/
 }
 
+.save-button .save-button-image {
+  width: 21px;
+  height: 21px;
+}
+
+@media (width <= 375px) {
+  .save-button .save-button-image {
+    width: 28px;
+    height: 28px;
+  }
+}
 .button__text {
   white-space: nowrap;
   position: relative;
   z-index: 1;
-  /*mix-blend-mode: difference;*/
 }
 
 .card__button {
@@ -436,17 +443,6 @@
 
 .like-icon.is-liked .sparks {
   animation: sparks_opacity-change 0.3s 0.3s ease-in 2 alternate;
-
-}
-
-.dialog {
-  /*padding: 30px 42px;
-  inline-size: clamp(21.313rem, 3.192vw + 20.564rem, 23.438rem);
-  block-size: 195px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;*/
 
 }
 
