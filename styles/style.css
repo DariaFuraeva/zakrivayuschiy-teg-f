@@ -196,8 +196,37 @@
     -1px -1px 0 var(--shadow-label-color),
     -1px 1px 0 var(--shadow-label-color),
     1px -1px 0 var(--shadow-label-color);
-  opacity: 50%;
+  opacity: 70%;
 }
+
+.card_filter-multi_1 {
+  filter: saturate(180%) grayscale(0.2);
+}
+
+.card_filter-saturate {
+  filter: saturate(130%);
+}
+
+.card_filter-grayscale {
+  filter: grayscale(0.7);
+}
+
+.card_filter-blur {
+  filter: invert(1);
+}
+
+.card_filter-sepia {
+  filter: sepia(40%)
+}
+
+.card_filter-hue {
+  filter: hue-rotate(180deg);
+}
+
+.card_filter-multi_2 {
+  filter: sepia(20%) contrast(70%);
+}
+
 
 @supports((text-stroke: 1px var(--shadow-label-color)) or (-webkit-text-stroke: 1px var(--shadow-label-color))) {
   .image-label {
@@ -433,11 +462,30 @@
   padding: 30px 42px;
   inline-size: clamp(21.313rem, 3.192vw + 20.564rem, 23.438rem);
   block-size: 195px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 39px auto;
+  gap: 20px;
+  /*justify-content: center;*/
   align-items: center;
+}
 
+.dialog-content {
+  display: inline-block;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+
+.dialog-form {
+  inline-size: 100%;
+}
+
+.dialog__button {
+  inline-size: 257px;
+  text-transform: uppercase;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.8);
 }
 
 @keyframes sparks_opacity-change {
