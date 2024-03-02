@@ -15,14 +15,14 @@
 */
 
 .page {
-  margin: 100px auto;
+  margin: 100px auto clamp(6.25rem, 0.282vw + 6.184rem, 6.438rem);
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-family-origin), sans-serif;
+  font-family: var(--font-family-origin), Arial, sans-serif;
   font-variation-settings: "wght" var(--font-weight-card);
   color: var(--accent-color);
   background-color: var(--background-color);
@@ -32,14 +32,11 @@
     center / cover;
 }
 
-.header, .main {
+.header {
   inline-size: clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem);
   background-color: var(--background-color);
-}
-
-.header {
   margin: 0 auto;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), 'Times New Roman', 'Times', serif;
   font-weight: 400;
   border: 2px solid var(--accent-color);
   display: flex;
@@ -72,7 +69,7 @@
 }
 
 .theme-menu__button {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), 'Times New Roman', Times, serif;
   font-size: 14px;
   font-weight: var(--font-weight-card);
   background-color: var(--background-color);
@@ -91,16 +88,6 @@
   animation: arrow__movement 0.5s ease-in-out alternate infinite;
   position: absolute;
   inset: auto auto auto -15px;
-}
-
-@keyframes arrow__movement {
-  from {
-    inset: auto auto auto -15px;;
-  }
-
-  to {
-    inset: auto auto auto -11px;;
-  }
 }
 
 .theme-menu__button:disabled {
@@ -126,7 +113,6 @@
   width: 100%;
   position: absolute;
   background-color: currentColor;
-  /*inset: auto 0 0 0;*/
   scale: 0;
 }
 
@@ -141,18 +127,22 @@
 }
 
 .main {
+  inline-size: clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem);
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   gap: 50px;
   align-items: center;
+  background-color: transparent;
 }
 
 .card {
   border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
 }
 
 .card_title {
-  font-weight: var(--font-weight-card-title);
+  font-variation-settings: 'wght' var(--font-weight-card-title);
   font-size: 18px;
   line-height: calc(21.78 / 18);
   padding: 3px 10px;
@@ -187,7 +177,7 @@
   z-index: 1;
   inset: 25px 13px auto auto;
   line-height: 1;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), 'Times New Roman', Times, serif;
   font-size: 14px;
   mix-blend-mode: hard-light;
   text-shadow:
@@ -257,7 +247,7 @@
 
 .button {
   display: inline-block;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), 'Times New Roman', Times, serif;
   font-size: 14px;
   font-weight: var(--font-weight-card);
   line-height: calc(12.6 / 14);
@@ -276,14 +266,14 @@
 }
 
 .save-button {
-  padding: 15px 19px 20px;
-  block-size: 80px;
+  padding-block: 15px;
+  /*padding: 15px 19px 15px 20px;*/
   inline-size: clamp(19.125rem, 2.723vw + 18.487rem, 20.938rem);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 3.5px;
+  gap: 8px;
 }
 
 .save-button .save-button-image {
@@ -310,16 +300,6 @@
 
 }
 
-@keyframes button_shadow {
-  from {
-    box-shadow: none;
-  }
-
-  to {
-    box-shadow: 2px 2px 0 var(--accent-color);
-  }
-}
-
 .button::after {
   content: '';
   display: inline-block;
@@ -339,6 +319,7 @@
   color: var(--button-hover-color);
   transition: color 0.5s linear;
   background-blend-mode: difference;
+  cursor: pointer;
 }
 
 .button:hover .save-button-image {
@@ -355,16 +336,6 @@
   scale: 1;
   transform: translate(0);
   background-blend-mode: difference;
-}
-
-@keyframes button_rectangle {
-  from {
-    transform: translate(-100%);
-  }
-
-  to {
-    transform: translate(0);
-  }
 }
 
 .card__icon-button {
@@ -391,63 +362,8 @@
   opacity: 0;
 }
 
-.core {
-  fill: transparent;
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon:hover .core {
-  fill: var(--like-icon-contour);
-  transition: fill 0.3s linear;
-}
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--like-icon-contour);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--like-icon-filling);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--like-icon-filling);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--like-icon-filling);
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--like-icon-filling);
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--like-icon-filling);
-  transition: fill 0.3s 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  animation: is-liked 0.3s 0.1s ease-in 2 alternate;
-  transform-origin: center;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks_opacity-change 0.3s 0.3s ease-in 2 alternate;
-
-}
-
 .dialog_title {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), 'Times New Roman', Times, serif;
   font-size: 14px;
   font-weight: var(--font-weight-card);
   text-transform: uppercase;
@@ -457,11 +373,13 @@
 .dialog[open] {
   padding: 30px 42px;
   inline-size: clamp(21.313rem, 3.192vw + 20.564rem, 23.438rem);
-  block-size: 195px;
+  min-block-size: 195px;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
   display: grid;
   grid-template-columns: 39px auto;
   gap: 20px;
-  /*justify-content: center;*/
   align-items: center;
 }
 
@@ -481,58 +399,8 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
-@keyframes sparks_opacity-change {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes is-liked {
-  from {
-    scale: 1;
-  }
-
-  to {
-    scale: 1.5;
-  }
-}
-
-@keyframes button_border {
-  from {
-    border: 2px solid transparent;
-  }
-
-  to {
-    border: 2px solid var(--accent-color);
-  }
-}
-
-@keyframes underline_text {
-  from {
-    scale: 0;
-    opacity: 1;
-  }
-
-  to {
-    scale: 1;
-    opacity: 0.6;
-  }
-}
-
-@keyframes opasity {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0.6;
-  }
-}
 
