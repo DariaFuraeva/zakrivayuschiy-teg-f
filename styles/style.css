@@ -128,7 +128,7 @@
 
 .main {
   inline-size: clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem);
-  background-color: var(--background-color);
+  /*background-color: var(--background-color);*/
   display: flex;
   flex-direction: column;
   gap: 50px;
