@@ -358,6 +358,10 @@
   animation: button_border 0.3s ease;
 }
 
+.like-icon:hover {
+  cursor: pointer;
+}
+
 .sparks {
   opacity: 0;
 }
